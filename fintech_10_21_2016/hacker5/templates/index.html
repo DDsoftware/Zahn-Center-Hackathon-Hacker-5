@@ -6,14 +6,26 @@
 {% include "header.html" %}
 
 <div class="main">
-
-{{data}}
-<br>
-{{data2}}
-<br>
-{{data3}}
+    <center><form action="search" class="form-inline" role="form" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {% if keyword %}
+            <input type="keyword" name="keyword" class="form-control input-box" value = '{{keyword}}' placeholder="Search Term">
+            {% else %}
+            <input type="keyword" name="keyword" class="form-control input-box" placeholder="Search Term">
+            {% endif %}
+        </div>
+        <button type="submit" class="btn button-box">Search</button>
+    </form>
 </div>
+<br>
+<center><div style="height: 300px; width: 600px; border:1px solid black;"> 
 
+{% for i in data %}
+    <h3>{{i}}</h3>
+    <br>
+{% endfor %}
+</div></center> </br></br></br>
 {% include "footer.html" %}
 
 {% endblock %}
