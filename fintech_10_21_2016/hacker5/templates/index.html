@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Main {% endblock %}
+{% block body_block %}
+{% load staticfiles %}
+
+{% include "header.html" %}
+
+<div class="main">
+
+{{data}}
+<br>
+{{data2}}
+<br>
+{{data3}}
+</div>
+
+{% include "footer.html" %}
+
+{% endblock %}
